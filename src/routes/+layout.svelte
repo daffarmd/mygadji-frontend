@@ -1,58 +1,20 @@
 <script>
-	import Header from './Header.svelte';
 	import './layout.css';
 
 	/** @type {{children: import('svelte').Snippet}} */
 	let { children } = $props();
 </script>
 
-<div class="app">
-	<Header />
+<svelte:head>
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+	<link
+		href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&family=Material+Symbols+Outlined:wght@200..700&display=swap"
+		rel="stylesheet"
+	/>
+	<link rel="icon" type="image/png" href="/favicon.png?v=20260401c" />
+	<link rel="apple-touch-icon" href="/favicon.png?v=20260401c" />
+	<meta name="theme-color" content="#f6f8fc" />
+</svelte:head>
 
-	<main>
-		{@render children()}
-	</main>
-
-	<footer>
-		<p>
-			visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to learn about SvelteKit
-		</p>
-	</footer>
-</div>
-
-<style>
-	.app {
-		display: flex;
-		flex-direction: column;
-		min-height: 100vh;
-	}
-
-	main {
-		flex: 1;
-		display: flex;
-		flex-direction: column;
-		padding: 1rem;
-		width: 100%;
-		max-width: 64rem;
-		margin: 0 auto;
-		box-sizing: border-box;
-	}
-
-	footer {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		padding: 12px;
-	}
-
-	footer a {
-		font-weight: bold;
-	}
-
-	@media (min-width: 480px) {
-		footer {
-			padding: 12px 0;
-		}
-	}
-</style>
+{@render children()}
